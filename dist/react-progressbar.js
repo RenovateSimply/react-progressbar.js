@@ -35,6 +35,7 @@
                 ShapeClass: null,
                 options: {},
                 animateOptions: {},
+                onAnimationFinished: null,
                 progress: 0,
                 text: null,
                 initialAnimate: false,
@@ -106,7 +107,7 @@
         },
 
         _animateProgress: function _animateProgress(progress) {
-            this.state.shape.animate(progress, this.props.animateOptions);
+            this.state.shape.animate(progress, this.props.animateOptions, this.props.onAnimationFinished);
         },
 
         _setProgress: function _setProgress(progress) {
